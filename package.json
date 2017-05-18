@@ -1,11 +1,12 @@
 {
   "name": "react-rx-connect",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small lightweight helper to connect RxJS observables to react component state.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "prebuild": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +25,7 @@
     "rxjs": "^5.4.0"
   },
   "devDependencies": {
+    "rimraf": "^2.6.1",
     "typescript": "^2.3.2"
   }
 }
