@@ -46,7 +46,7 @@ export class SomeComponent extends React.Component<any, any> {
 }
 ```
 
-## how to use it react-rx-connect
+## How to use  react-rx-connect
 
 
 The **connectStreams** function will take an object of streams as the second parameter.
