@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "prebuild": "rimraf dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,34 @@
   },
   "devDependencies": {
     "@types/core-js": "^0.9.41",
+    "@types/jest": "^19.2.3",
+    "jasmine": "^2.6.0",
+    "jest": "^20.0.3",
+    "reflect-metadata": "^0.1.10",
     "rimraf": "^2.6.1",
+    "ts-jest": "^20.0.4",
     "typescript": "^2.3.2"
+  },
+  "jest": {
+    "globals": {
+      "__TS_CONFIG__": "tsconfig.jest.json"
+    },
+    "setupTestFrameworkScriptFile": "./test-bundle.js",
+    "moduleNameMapper": {
+      "^.+\\.(s?css|less)$": "<rootDir>/config/empty-module.js"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules",
+      "<rootDir>/node_modules/(?!react-rx-connect)"
+    ],
+    "testRegex": "/src/.*\\.(spec.ts|spec.tsx)$"
   }
 }
