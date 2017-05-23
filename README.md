@@ -1,4 +1,4 @@
-# react-rx-connect
+# react-rx-connect [![build status](https://circleci.com/gh/brechtbilliet/react-rx-connect.svg?style=shield&circle-token=c121d4e9b27ab0ca50cf8dfdd5692ae5b32db609)](https://circleci.com/gh/brechtbilliet/react-rx-connect)
 
 A small lightweight helper to connect RxJS observables to react component state.
 
