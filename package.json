@@ -28,7 +28,6 @@
   "devDependencies": {
     "@types/core-js": "^0.9.41",
     "@types/jest": "^19.2.3",
-    "jasmine": "^2.6.0",
     "jest": "^20.0.3",
     "reflect-metadata": "^0.1.10",
     "rimraf": "^2.6.1",
