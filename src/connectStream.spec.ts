@@ -55,7 +55,7 @@ describe('connectStream', () => {
             componentWillUnmount: jest.fn()
         };
         const key = 'testKey';
-        const stream$ = new Observable.of(null);
+        const stream$ = Observable.of(null);
         const subscription = {unsubscribe: jest.fn()};
 
         spyOn(subscription, 'unsubscribe');
@@ -75,7 +75,7 @@ describe('connectStream', () => {
                 componentWillUnmount: unmount
             };
             const key = 'testKey';
-            const stream$ = new Observable.of(null);
+            const stream$ = Observable.of(null);
 
             connectStream(stream$, component, key);
             component.componentWillUnmount();
@@ -89,7 +89,7 @@ describe('connectStream', () => {
                 setState: jest.fn()
             };
             const key = 'testKey';
-            const stream$ = new Observable.of(null);
+            const stream$ = Observable.of(null);
             connectStream(stream$, component, key);
         });
     })
