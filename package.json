@@ -1,6 +1,6 @@
 {
   "name": "react-rx-connect",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A small lightweight helper to connect RxJS observables to react component state.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
