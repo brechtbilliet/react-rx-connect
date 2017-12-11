@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs/Observable';
-export function connectStream(stream$: Observable<any>, caller: any, key: string): void {
+import { Subscription } from 'rxjs/Subscription';
+export function connectStream(stream$: Observable<any>, caller: any, key: string): Subscription {
     if (!stream$ || stream$.subscribe === undefined) {
         throw new Error(`The passed stream for ${key} is not a valid RxJS stream`);
     }
@@ -13,11 +14,12 @@ export function connectStream(stream$: Observable<any>, caller: any, key: string
     });
     // hook into componentWillUnmount
     const oldFn = caller.componentWillUnmount || function () {
-        };
+    };
     caller.componentWillUnmount = () => {
         if (oldFn.call) {
             oldFn.call(caller);
         }
         subscription.unsubscribe();
     }
+    return subscription;
 }

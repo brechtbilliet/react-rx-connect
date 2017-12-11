@@ -66,6 +66,22 @@ describe('connectStream', () => {
         expect(subscription.unsubscribe).toHaveBeenCalled();
     });
 
+    test('it should return a subscription', () => {
+        const component = {
+            state: {testKey: null},
+            setState: jest.fn(),
+            componentWillUnmount: jest.fn()
+        };
+        const key = 'testKey';
+        const stream$ = Observable.of(null);
+        const subscription = {unsubscribe: jest.fn()};
+
+        spyOn(stream$, 'subscribe').and.returnValue(subscription);
+
+        expect(connectStream(stream$, component, key)).toBe(subscription);
+    });
+
+
     describe('given the component has an componentWillUnmount function', () => {
         test('it should call the original callback when the component will unmount', () => {
             const unmount = jest.fn();
